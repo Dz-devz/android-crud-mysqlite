@@ -25,5 +25,18 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        editId = findViewById(R.id.editId);
+        editName = findViewById(R.id.editName);
+        editEmail = findViewById(R.id.editEmail);
+
+        addButton = findViewById(R.id.addButton);
+        deleteButton = findViewById(R.id.deleteButton);
+        showButton = findViewById(R.id.showButton);
+        showAllButton = findViewById(R.id.showAllButton);
+        deleteAllButton = findViewById(R.id.deleteAllButton);
+        updateButton = findViewById(R.id.updateButton);
     }
+
+
 }
