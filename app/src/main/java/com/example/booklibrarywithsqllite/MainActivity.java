@@ -1,6 +1,8 @@
 package com.example.booklibrarywithsqllite;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +11,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    private EditText editId, editName, editEmail;
+    private Button addButton, deleteButton, showButton, showAllButton, deleteAllButton, updateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

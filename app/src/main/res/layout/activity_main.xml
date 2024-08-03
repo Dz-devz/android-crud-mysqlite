@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -17,73 +17,73 @@
         android:layout_centerHorizontal="true"/>
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/editName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
-        android:layout_below="@id/editTextText"
+        android:layout_below="@id/editId"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/editEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
-        android:layout_below="@id/editTextText2"
+        android:layout_below="@id/editName"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/buttonOne"
+        android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Add"
-        android:layout_below="@id/editTextText3"/>
+        android:layout_below="@id/editEmail"/>
 
     <Button
-        android:id="@+id/buttonTwo"
+        android:id="@+id/showButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Show"
-        android:layout_below="@id/buttonOne"/>
+        android:layout_below="@id/addButton"/>
 
     <Button
-        android:id="@+id/buttonOThree"
+        android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Update"
-        android:layout_below="@id/buttonTwo"/>
+        android:layout_below="@id/showButton"/>
 
     <Button
-        android:id="@+id/buttonFour"
+        android:id="@+id/showAllButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Show All"
-        android:layout_below="@id/buttonOThree"/>
+        android:layout_below="@id/updateButton"/>
     <Button
-        android:id="@+id/buttonFive"
+        android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Delete"
-        android:layout_below="@id/buttonFour"/>
+        android:layout_below="@id/showAllButton"/>
 
     <Button
-        android:id="@+id/buttonSix"
+        android:id="@+id/deleteAllButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Delete All"
-        android:layout_below="@id/buttonFive"/>
+        android:layout_below="@id/deleteButton"/>
 
 
 
