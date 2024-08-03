@@ -1,8 +1,10 @@
 package com.example.booklibrarywithsqllite;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText editId, editName, editEmail;
     private Button addButton, deleteButton, showButton, showAllButton, deleteAllButton, updateButton;
-
+    private DatabaseHelper myDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +38,30 @@ public class MainActivity extends AppCompatActivity {
         showAllButton = findViewById(R.id.showAllButton);
         deleteAllButton = findViewById(R.id.deleteAllButton);
         updateButton = findViewById(R.id.updateButton);
+
+        myDB = new DatabaseHelper(this);
+
+        addData();
     }
 
+    public void addData() {
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean isInserted = myDB.insertData(editName.getText().toString(), editEmail.getText().toString());
 
+                if (isInserted){
+                    Toast.makeText(
+                            MainActivity.this,
+                            "Data Inserted...",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(
+                            MainActivity.this,
+                            "Something went wrong",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 }
