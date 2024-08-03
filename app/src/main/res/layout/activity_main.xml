@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:hint="Enter Id"
         android:layout_centerHorizontal="true"/>
 
     <EditText
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:hint="Enter Name"
         android:layout_below="@id/editId"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true" />
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:hint="Enter Email"
         android:layout_below="@id/editName"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true" />
