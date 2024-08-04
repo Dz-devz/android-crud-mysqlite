@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         addData();
         showData();
+        updateData();
     }
 
     public void addData() {
@@ -86,6 +87,23 @@ public class MainActivity extends AppCompatActivity {
                         "EMIL: " + cursor.getString(2) + "\n";
                     }
                     showMessageData("DATA", data);
+            }
+        });
+    }
+
+    public void updateData(){
+        updateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean isUpdated = myDB.updateData(editId.getText().toString(),
+                        editName.getText().toString(),
+                        editEmail.getText().toString());
+
+                if(isUpdated){
+                    Toast.makeText(MainActivity.this, "Data Updated", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
