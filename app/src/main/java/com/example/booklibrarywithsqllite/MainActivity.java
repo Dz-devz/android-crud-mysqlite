@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 showMessageData("DATA", buffer.toString());
             }
         });
+        return null;
     }
 
     public void updateData(){
