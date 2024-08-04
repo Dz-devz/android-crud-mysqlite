@@ -1,5 +1,6 @@
 package com.example.booklibrarywithsqllite;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         myDB = new DatabaseHelper(this);
 
         addData();
+        showData();
     }
 
     public void addData() {
@@ -66,7 +68,27 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void showData(){
+        showButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String id = editId.getText().toString();
+                if(id.equals((""))){
+                    editId.setError("Please Enter Id");
+                    return;
+                }
+                    Cursor cursor = myDB.getData(id);
+                    String data = null;
 
+                    if(cursor.moveToNext()){
+                        data = "ID : " + cursor.getString(0) + "\n" +
+                        "NAME: " + cursor.getString(1) + "\n" +
+                        "EMIL: " + cursor.getString(2) + "\n";
+                    }
+                    showMessageData("DATA", data);
+            }
+        });
+    }
 
     public void showMessageData(String title, String msg){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -76,4 +98,5 @@ public class MainActivity extends AppCompatActivity {
         builder.setMessage(msg);
         builder.show();
     }
+
 }

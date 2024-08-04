@@ -2,6 +2,7 @@ package com.example.booklibrarywithsqllite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -45,5 +46,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } else {
             return true;
         }
+    }
+
+    public Cursor getData(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_NAME + "WHERE ID='" +id+"'";
+        Cursor cursor = db.rawQuery(query, null);
+
+        return cursor;
     }
 }
