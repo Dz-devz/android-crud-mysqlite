@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         showData();
         updateData();
         deleteData();
+        getAllData();
     }
 
     public void addData() {
@@ -91,6 +92,25 @@ public class MainActivity extends AppCompatActivity {
                         showMessageData("DATA", "There is no Data");
                     }
 
+            }
+        });
+    }
+
+    public Cursor getAllData() {
+        showAllButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Cursor cursor = myDB.getAllData();
+                StringBuffer buffer = new StringBuffer();
+                if(cursor.getCount() == 0){
+                    showMessageData("Data", "Nothing Found");
+                    return;
+                } while (cursor.moveToNext()){
+                    buffer.append("ID : " + cursor.getString(0) + "\n");
+                    buffer.append("NAME : " + cursor.getString(1) + "\n");
+                    buffer.append("EMAIl : " + cursor.getString(2) + "\n\n");
+                }
+                showMessageData("DATA", buffer.toString());
             }
         });
     }
