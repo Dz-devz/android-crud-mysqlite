@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         updateData();
         deleteData();
         getAllData();
+        deleteAllData();
     }
 
     public void addData() {
@@ -154,6 +155,20 @@ public class MainActivity extends AppCompatActivity {
 
                 if(var > 0){
                     Toast.makeText(MainActivity.this, "Data Deleted", Toast.LENGTH_SHORT).show();
+                } else{
+                    Toast.makeText(MainActivity.this, "Deletion Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    public void deleteAllData(){
+        deleteAllButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Integer var =myDB.deleteAllData();
+                if(var > 0){
+                    Toast.makeText(MainActivity.this, "All Data has benn deleted", Toast.LENGTH_SHORT).show();
                 } else{
                     Toast.makeText(MainActivity.this, "Deletion Error", Toast.LENGTH_SHORT).show();
                 }
