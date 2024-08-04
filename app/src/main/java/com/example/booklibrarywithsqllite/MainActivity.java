@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         addData();
         showData();
         updateData();
+        deleteData();
     }
 
     public void addData() {
@@ -115,6 +116,25 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle(title);
         builder.setMessage(msg);
         builder.show();
+    }
+
+    public void deleteData(){
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String id = editId.getText().toString();
+                if(id.equals(String.valueOf(""))){
+                    editId.setError("Please Enter Id");
+                }
+                Integer var = myDB.deleteData(id);
+
+                if(var > 0){
+                    Toast.makeText(MainActivity.this, "Data Deleted", Toast.LENGTH_SHORT).show();
+                } else{
+                    Toast.makeText(MainActivity.this, "Deletion Error", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
 }
