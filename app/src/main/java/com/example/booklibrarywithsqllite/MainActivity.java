@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String id = editId.getText().toString();
-                if(id.equals((""))){
+                if(id.equals(String.valueOf(""))){
                     editId.setError("Please Enter Id");
                     return;
                 }

@@ -51,9 +51,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getData(String id){
         SQLiteDatabase db = this.getWritableDatabase();
 
-        String query = "SELECT * FROM " + TABLE_NAME + "WHERE ID='" +id+"'";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE ID='" +id+"'";
         Cursor cursor = db.rawQuery(query, null);
 
         return cursor;
+    }
+
+    public boolean updateData(String id, String name, String email){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_1, id);
+        contentValues.put(COL_2, name);
+        contentValues.put(COL_3, email);
+
+        db.update(TABLE_NAME, contentValues, "ID=?", new String[]{id});
+        return true;
     }
 }
