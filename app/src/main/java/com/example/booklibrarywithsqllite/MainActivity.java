@@ -86,8 +86,11 @@ public class MainActivity extends AppCompatActivity {
                         data = "ID : " + cursor.getString(0) + "\n" +
                         "NAME: " + cursor.getString(1) + "\n" +
                         "EMIL: " + cursor.getString(2) + "\n";
+                        showMessageData("DATA", data);
+                    } else{
+                        showMessageData("DATA", "There is no Data");
                     }
-                    showMessageData("DATA", data);
+
             }
         });
     }
